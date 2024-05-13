@@ -12,7 +12,7 @@ export default defineFakeRoute([
           data: {
             avatar: "https://avatars.githubusercontent.com/u/44761321",
             username: "admin",
-            nickname: "小铭",
+            nickname: "Docker",
             // 一个用户可能有多个角色
             roles: ["admin"],
             accessToken: "eyJhbGciOiJIUzUxMiJ9.admin",
