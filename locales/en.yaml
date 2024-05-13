@@ -59,7 +59,7 @@ panel:
   pureHiddenFooter: Hidden Footer
   pureMultiTagsCache: MultiTags Cache
 menus:
-  pureHome: Home
+  pureHome: Dashboard
   pureLogin: Login
   pureAbnormal: Abnormal Page
   pureFourZeroFour: "404"
