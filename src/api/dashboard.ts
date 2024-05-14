@@ -6,6 +6,6 @@ type Result = {
   data?: any;
 };
 
-export const getOverview = () => {
-  return http.request<Result>("get", baseUrlApi("overview"));
+export const getDashboard = () => {
+  return http.request<Result>("get", baseUrlApi("dashboard"));
 };

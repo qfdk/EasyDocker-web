@@ -1,7 +1,7 @@
-import { getOverview } from "@/api/overview";
+import { getDashboard } from "@/api/dashboard";
 
 export async function useColumns() {
-  const { data } = await getOverview();
+  const { data } = await getDashboard();
   console.log(data);
   const columns = [
     {
