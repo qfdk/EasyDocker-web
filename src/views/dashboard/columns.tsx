@@ -2,7 +2,6 @@ import { getDashboard } from "@/api/dashboard";
 
 export async function useColumns() {
   const { data } = await getDashboard();
-  console.log(data);
   const columns = [
     {
       label: "系统",

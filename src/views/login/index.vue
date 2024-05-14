@@ -8,7 +8,6 @@ import type { FormInstance } from "element-plus";
 import { $t, transformI18n } from "@/plugins/i18n";
 import { useLayout } from "@/layout/hooks/useLayout";
 import { useUserStoreHook } from "@/store/modules/user";
-import { initRouter, getTopMenu } from "@/router/utils";
 import { bg, avatar } from "./utils/static";
 import { useRenderIcon } from "@/components/ReIcon/src/hooks";
 import { ref, reactive, onMounted, onBeforeUnmount } from "vue";
@@ -21,6 +20,8 @@ import globalization from "@/assets/svg/globalization.svg?component";
 import Lock from "@iconify-icons/ri/lock-fill";
 import Check from "@iconify-icons/ep/check";
 import User from "@iconify-icons/ri/user-3-fill";
+import { usePermissionStoreHook } from "@/store/modules/permission";
+import { addPathMatch } from "@/router/utils";
 
 defineOptions({
   name: "Login"
@@ -40,7 +41,7 @@ const { locale, translationCh, translationEn } = useTranslationLang();
 
 const ruleForm = reactive({
   username: "admin",
-  password: "admin123"
+  password: "admin"
 });
 
 const onLogin = async (formEl: FormInstance | undefined) => {
@@ -55,11 +56,11 @@ const onLogin = async (formEl: FormInstance | undefined) => {
         })
         .then(res => {
           if (res.success) {
-            // 获取后端路由
-            initRouter().then(() => {
-              router.push(getTopMenu(true).path);
-              message("登录成功", { type: "success" });
-            });
+            // 全部采取静态路由模式
+            usePermissionStoreHook().handleWholeMenus([]);
+            addPathMatch();
+            router.push("/");
+            message("登录成功", { type: "success" });
           }
         })
         .catch(e => {
@@ -94,7 +95,7 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="select-none">
-    <img :src="bg" class="wave" />
+    <img :src="bg" class="wave" alt="bg" />
     <div class="flex-c absolute right-5 top-3">
       <!-- 主题 -->
       <el-switch
@@ -138,9 +139,7 @@ onBeforeUnmount(() => {
       </el-dropdown>
     </div>
     <div class="login-container">
-      <div class="img">
-        <!--        <component :is="toRaw(illustration)" />-->
-      </div>
+      <div class="img" />
       <div class="login-box">
         <div class="login-form">
           <avatar class="avatar" />

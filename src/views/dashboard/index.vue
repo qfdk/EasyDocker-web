@@ -23,7 +23,7 @@ const loadColumns = async () => {
 loadColumns();
 
 defineOptions({
-  name: "Welcome"
+  name: "Dashboard"
 });
 
 const words = [
