@@ -81,7 +81,7 @@ Object.keys(devDependencies).forEach(key => {
         <div class="card-header flex items-center">
           <span class="font-medium">生产环境依赖</span>
           <el-tag type="primary" effect="dark" size="small" round class="ml-1">
-            {{ schema.length }}
+            {{ schema.length || "-" }}
           </el-tag>
         </div>
       </template>

@@ -9,7 +9,7 @@ export async function useColumns() {
       cellRenderer: () => {
         return (
           <el-tag size="default" class="!text-base">
-            {data.OperatingSystem}
+            {data.OperatingSystem || "-"}
           </el-tag>
         );
       }
@@ -20,7 +20,7 @@ export async function useColumns() {
       cellRenderer: () => {
         return (
           <el-tag size="default" class="!text-base">
-            {data.ServerVersion}
+            {data.ServerVersion || "-"}
           </el-tag>
         );
       }
@@ -31,7 +31,7 @@ export async function useColumns() {
       cellRenderer: () => {
         return (
           <el-tag size="default" class="!text-base">
-            {data.DockerRootDir}
+            {data.DockerRootDir || "-"}
           </el-tag>
         );
       }
@@ -42,7 +42,7 @@ export async function useColumns() {
       cellRenderer: () => {
         return (
           <el-tag size="default" class="!text-base">
-            {data.Driver}
+            {data.Driver || "-"}
           </el-tag>
         );
       }
@@ -53,7 +53,7 @@ export async function useColumns() {
       cellRenderer: () => {
         return (
           <el-tag size="default" class="!text-base">
-            {data.KernelVersion}
+            {data.KernelVersion || "-"}
           </el-tag>
         );
       }
@@ -64,7 +64,7 @@ export async function useColumns() {
       cellRenderer: () => {
         return (
           <el-tag size="default" class="!text-base">
-            {data.NCPU}
+            {data.NCPU || "-"}
           </el-tag>
         );
       }
@@ -75,7 +75,7 @@ export async function useColumns() {
       cellRenderer: () => {
         return (
           <el-tag size="default" class="!text-base">
-            {data.Containers}
+            {data.Containers || "-"}
           </el-tag>
         );
       }
@@ -86,7 +86,7 @@ export async function useColumns() {
       cellRenderer: () => {
         return (
           <el-tag size="default" class="!text-base">
-            {data.Images}
+            {data.Images || "-"}
           </el-tag>
         );
       }
