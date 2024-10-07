@@ -18,14 +18,13 @@ const loadColumns = async () => {
 loadColumns();
 const loadContainers = async () => {
   containers.value = (await getContainers()).data;
-  console.log((await getContainers()).data);
 };
 loadContainers();
 const getTagType = state => {
   switch (state.toLowerCase()) {
     case "running":
       return "success";
-    case "stopped":
+    case "exited":
       return "danger";
     case "paused":
       return "warning";
