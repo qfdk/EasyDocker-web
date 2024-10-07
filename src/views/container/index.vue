@@ -25,7 +25,7 @@ const getTagType = state => {
   switch (state.toLowerCase()) {
     case "running":
       return "success";
-    case "stopped":
+    case "exited":
       return "danger";
     case "paused":
       return "warning";
